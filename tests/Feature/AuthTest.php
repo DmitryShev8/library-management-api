@@ -19,8 +19,6 @@ class AuthTest extends TestCase
             'password_confirmation' => 'password123',
         ]);
 
-        $response->dump();
-
         $response->assertStatus(201)
             ->assertJsonPath('data.user.email', 'test@example.com')
             ->assertJsonStructure([
